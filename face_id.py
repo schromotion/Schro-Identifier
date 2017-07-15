@@ -22,25 +22,25 @@ unknown_face_encoding = face_recognition.face_encodings(unknown_picture)[0]
 count = 0
 check = False
 
+print("It's a picture of")
+
 for member in family:
     results = face_recognition.compare_faces([member], unknown_face_encoding)
 
-    print("It's a picture of")
     if results[0] == True:
         if count == 0:
             print("Kellen")
-        else if count == 1:
+        elif count == 1:
             print("Ellen")
-        else if count == 2:
+        elif count == 2:
             print("Mackie")
-        else if count == 3:
+        elif count == 3:
             print("Dan")
-        else if count == 4:
+        elif count == 4:
             print("Tara")
         check = True
-        print("nope!")
 
-    count++
+    count+=1
 
 if check == False:
     print("No family members in this picture!")
