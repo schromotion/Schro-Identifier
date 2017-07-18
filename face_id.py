@@ -16,31 +16,37 @@ encodeTara = face_recognition.face_encodings(picTara)[0]
 
 family = [encodeKellen, encodeEllen, encodeMackie, encodeDan, encodeTara]
 
-unknown_picture = face_recognition.load_image_file("unknown.jpg")
-unknown_face_encoding = face_recognition.face_encodings(unknown_picture)[0]
+unknown_face_locations = []
+unknown_face_encodings = []
 
-count = 0
+unknown_picture = face_recognition.load_image_file("unknown.jpg")
+unknown_face_locations = face_recognition.face_locations(unknown_picture)
+unknown_face_encodings = face_recognition.face_encodings(unknown_picture, unknown_face_locations)
+
+
 check = False
 
 print("It's a picture of")
 
-for member in family:
-    results = face_recognition.compare_faces([member], unknown_face_encoding)
+for unknown_face_encoding in unknown_face_encodings:
+    count = 0
+    for member in family:
+        results = face_recognition.compare_faces([member], [unknown_face_encoding])
+        if results[0] == True:
+            if count == 0:
+                print("Kellen")
+            elif count == 1:
+                print("Ellen")
+            elif count == 2:
+                print("Mackie")
+            elif count == 3:
+                print("Dan")
+            elif count == 4:
+                print("Tara")
+                check = True
 
-    if results[0] == True:
-        if count == 0:
-            print("Kellen")
-        elif count == 1:
-            print("Ellen")
-        elif count == 2:
-            print("Mackie")
-        elif count == 3:
-            print("Dan")
-        elif count == 4:
-            print("Tara")
-        check = True
+        count+=1
 
-    count+=1
 
 if check == False:
     print("No family members in this picture!")
