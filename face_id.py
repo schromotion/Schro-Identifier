@@ -23,11 +23,15 @@ unknown_picture = face_recognition.load_image_file("unknown.jpg")
 unknown_face_locations = face_recognition.face_locations(unknown_picture)
 unknown_face_encodings = face_recognition.face_encodings(unknown_picture, unknown_face_locations)
 
+print("UNKNOWN")
+print(unknown_face_encodings)
+print("FAMILY")
+print(family)
 
 check = False
 
 print("It's a picture of")
-
+'''
 for unknown_face_encoding in unknown_face_encodings:
     count = 0
     for member in family:
@@ -47,6 +51,6 @@ for unknown_face_encoding in unknown_face_encodings:
 
         count+=1
 
-
+'''
 if check == False:
     print("No family members in this picture!")
