@@ -31,11 +31,11 @@ print(family)
 check = False
 
 print("It's a picture of")
-'''
+
 for unknown_face_encoding in unknown_face_encodings:
     count = 0
     for member in family:
-        results = face_recognition.compare_faces([member], [unknown_face_encoding])
+        results = face_recognition.compare_faces([member], unknown_face_encoding)
         if results[0] == True:
             if count == 0:
                 print("Kellen")
@@ -51,6 +51,6 @@ for unknown_face_encoding in unknown_face_encodings:
 
         count+=1
 
-'''
+
 if check == False:
     print("No family members in this picture!")
