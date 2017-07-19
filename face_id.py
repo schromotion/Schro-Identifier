@@ -16,6 +16,10 @@ encodeTara = face_recognition.face_encodings(picTara)[0]
 
 family = [encodeKellen, encodeEllen, encodeMackie, encodeDan, encodeTara]
 
+classifiers = open("encode.txt", "r")
+
+famString = classifiers.read()
+
 unknown_face_locations = []
 unknown_face_encodings = []
 
