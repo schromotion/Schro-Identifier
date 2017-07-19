@@ -1,5 +1,7 @@
+#Dependencies
 import face_recognition
 
+#Import family pictures from local folder
 picKellen = face_recognition.load_image_file("kellen.jpg")
 picEllen = face_recognition.load_image_file("ellen.jpg")
 picMackie = face_recognition.load_image_file("mackie.jpg")
@@ -8,6 +10,7 @@ picTara = face_recognition.load_image_file("tara.jpg")
 
 pics = [picKellen, picEllen, picMackie, picDan, picTara]
 
+#Find face encodings for known faces
 encodeKellen = face_recognition.face_encodings(picKellen)[0]
 encodeEllen = face_recognition.face_encodings(picEllen)[0]
 encodeMackie = face_recognition.face_encodings(picMackie)[0]
@@ -16,10 +19,16 @@ encodeTara = face_recognition.face_encodings(picTara)[0]
 
 family = [encodeKellen, encodeEllen, encodeMackie, encodeDan, encodeTara]
 
+#Read encodings from local text file... Will replace previous method once finished
 classifiers = open("encode.txt", "r")
 
 famString = classifiers.read()
 
+print(famString)
+
+print(famString.split)
+
+#Read and encode unknown picture from local file
 unknown_face_locations = []
 unknown_face_encodings = []
 
@@ -32,6 +41,7 @@ unknown_face_encodings = face_recognition.face_encodings(unknown_picture, unknow
 #print("FAMILY")
 #print(family)
 
+#Test if the known faces are in the unknown picture
 check = False
 
 print("It's a picture of")
