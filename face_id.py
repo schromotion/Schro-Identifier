@@ -27,10 +27,10 @@ unknown_picture = face_recognition.load_image_file("unknown.jpg")
 unknown_face_locations = face_recognition.face_locations(unknown_picture)
 unknown_face_encodings = face_recognition.face_encodings(unknown_picture, unknown_face_locations)
 
-print("UNKNOWN")
-print(unknown_face_encodings)
-print("FAMILY")
-print(family)
+#print("UNKNOWN")
+#print(unknown_face_encodings)
+#print("FAMILY")
+#print(family)
 
 check = False
 
