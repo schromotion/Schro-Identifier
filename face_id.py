@@ -51,7 +51,7 @@ for unknown_face_encoding in unknown_face_encodings:
                 print("Dan")
             elif count == 4:
                 print("Tara")
-                check = True
+        check = True
 
         count+=1
 
