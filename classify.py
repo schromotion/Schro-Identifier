@@ -18,11 +18,16 @@ family = [encodeKellen, encodeEllen, encodeMackie, encodeDan, encodeTara]
 
 classifiers = open("encode.txt", "w")
 
-classifiers.write(str(family))
 #for e in family:
 #    classifiers.write("$")
 #    classifiers.write(str(e))
 #    classifiers.write("\n")
+
+for e in family:
+    for i in e:
+        classifiers.write(str(i))
+        classifiers.write(",")
+    classifiers.write("$$$")
 
 print("encoded ",len(family)," family members")
 classifiers.close

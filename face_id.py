@@ -25,8 +25,8 @@ classifiers = open("encode.txt", "r")
 famString = classifiers.read()
 
 print(famString)
-
-print(famString.split)
+famEncode = famString.split("$$$")
+print(famEncode)
 
 #Read and encode unknown picture from local file
 unknown_face_locations = []
