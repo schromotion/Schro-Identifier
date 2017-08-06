@@ -20,13 +20,13 @@ encodeTara = face_recognition.face_encodings(picTara)[0]
 family = [encodeKellen, encodeEllen, encodeMackie, encodeDan, encodeTara]
 
 #Read encodings from local text file... Will replace previous method once finished
-classifiers = open("encode.txt", "r")
+#classifiers = open("encode.txt", "r")
 
-famString = classifiers.read()
+#famString = classifiers.read()
 
-print(famString)
-famEncode = famString.split("$$$")
-print(famEncode)
+#print(famString)
+#famEncode = famString.split("$$$")
+#print(famEncode)
 
 #Read and encode unknown picture from local file
 unknown_face_locations = []
